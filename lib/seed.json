@@ -1,0 +1,27 @@
+{
+  "jobs": [],
+  "resumes": [],
+  "applications": [],
+  "companies": [],
+  "log": [],
+  "updatedAt": "2026-10-19T00:00:00Z",
+  "revision": 0,
+  "preferences": {
+    "name": "",
+    "experience": "",
+    "evidence": "",
+    "role_priority": "",
+    "location": "",
+    "employment": "Permanent preferred",
+    "minimum_inr_lpa": "",
+    "target_inr_lpa": "",
+    "pay_basis": "Annual fixed salary; bonus and equity separate",
+    "notice_period": "",
+    "companies": "Any",
+    "weekly_count": "10\u201315, include clearly marked stretch roles",
+    "notification_email": "",
+    "priorities_proposed": "",
+    "schedule": "Not configured",
+    "phase": "2: approval-based application workflow"
+  }
+}

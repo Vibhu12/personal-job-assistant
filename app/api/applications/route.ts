@@ -1,0 +1,5 @@
+import {requestQuestions,answerQuestions} from '../../../lib/questions';
+import {assertSameOrigin,isSignedIn,workspace,displayName} from '../../../lib/access';
+import {approveApplication,updateApplication,applicationPacket} from '../../../lib/applications';
+export async function GET(req:Request){if(!isSignedIn(req))return Response.json({error:'Sign in required'},{status:403});try{return Response.json(await applicationPacket(new URL(req.url).searchParams.get('id')||'',workspace(req)),{headers:{'Cache-Control':'private, no-store'}})}catch(e){return Response.json({error:String(e)},{status:400})}}
+export async function POST(req:Request){if(!isSignedIn(req))return Response.json({error:'Sign in required'},{status:403});try{assertSameOrigin(req);const b:any=await req.json();return Response.json(b.action==='approve'?await approveApplication(b,workspace(req)):b.action==='questions'?await requestQuestions(b.id,b,workspace(req)):b.action==='answers'?await answerQuestions(b.id,b,workspace(req)):await updateApplication(b.id,b,workspace(req)));}catch(e){return Response.json({error:String(e)},{status:400});}}
